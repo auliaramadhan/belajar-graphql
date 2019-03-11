@@ -1,6 +1,6 @@
 const express = require("express");
 const graphqlHTTP = require("express-graphql");
-const schema = require("./schema");
+const schema = require("./schema/schema");
 const mongoose = require('mongoose')
 
 
@@ -20,6 +20,6 @@ app.use(
 );
 
 app.listen(4000, () => {
-  console.log("now listening port 400");
+  console.log("now listening port 4000");
 });
 
