@@ -2,14 +2,18 @@ const express = require("express");
 const graphqlHTTP = require("express-graphql");
 const schema = require("./schema/schema");
 const mongoose = require('mongoose')
-
+const cors = require('cors')
 
 const app = express();
 
-mongoose.connect('mongodb+srv://aul:<123>@learngrahql-hirkr.mongodb.net/test?retryWrites=true')
+app.use(cors())
+
+mongoose.connect('mongodb+srv://aul:123qwerty@learngrahql-hirkr.mongodb.net/test?retryWrites=true', { useNewUrlParser: true })
 mongoose.connection.once('open', () => {
   
 })
+
+
 
 app.use(
   "/graphql",
@@ -19,7 +23,7 @@ app.use(
   })
 );
 
-app.listen(4000, () => {
+app.listen(5000, () => {
   console.log("now listening port 4000");
 });
 
