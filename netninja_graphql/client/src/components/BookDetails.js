@@ -29,11 +29,11 @@ export class BookDetails extends Component {
 }
 
 export default graphql(getBookQuery, {
-  options: props => {}
+  options: (props) =>{
     return {
       variables: {
         id: props.bookId
       }
-    };
-  }
+    }
+   }
 })(BookDetails);
